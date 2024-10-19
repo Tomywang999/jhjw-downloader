@@ -35,13 +35,13 @@ To install and set up the project, follow these steps:
 
 1. Replace the cookie information with yours
 
-2. To use the downloader, execute the main script. For example:
+2. Fill in the necessary information with the store you want to download from 
+
+3. To use the downloader, execute the main script. For example:
     
     ```bash
     python main.py
     ```
-
-Replace `<VIDEO_URL>` with the URL of the video you want to download and `<OUTPUT_PATH>` with the desired path where the video should be saved.
 
 ## Contributing
 
