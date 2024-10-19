@@ -33,11 +33,13 @@ To install and set up the project, follow these steps:
 
 ## Usage
 
-To use the downloader, execute the main script with the necessary parameters. For example:
+1. Replace the cookie information with yours
 
-```bash
-python main.py --url <VIDEO_URL> --output <OUTPUT_PATH>
-```
+2. To use the downloader, execute the main script. For example:
+    
+    ```bash
+    python main.py
+    ```
 
 Replace `<VIDEO_URL>` with the URL of the video you want to download and `<OUTPUT_PATH>` with the desired path where the video should be saved.
 
