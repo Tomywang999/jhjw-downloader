@@ -6,27 +6,27 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 
 courselist_url = "http://zhwx.jhjw.cn/ajax/Course.ashx"
-courselist_payload = "mydate=1721143100488&actionname=possessCourse&pagesize=200&uid=8435&currpage=1&type="
+courselist_payload = "mydate=<timestamp>&actionname=possessCourse&pagesize=200&uid=<uid>&currpage=1&type="
 courselist_headers = {
     'Host': 'zhwx.jhjw.cn',
     'Accept': 'application/json, text/javascript, */*; q=0.01',
     'X-Requested-With': 'XMLHttpRequest',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.8(0x13080812) XWEB/1216 Flue',
+    'User-Agent': 'Mozilla/5.0 (compatible; ExampleBot/0.1; +http://example.com/bot)',
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     'Origin': 'http://zhwx.jhjw.cn',
     'Referer': 'http://zhwx.jhjw.cn/PossessCourse.aspx',
     'Accept-Language': 'en-US,en;q=0.9',
-    'Cookie': 'Cookies_PTZX_OpenID=oeW3J5w13PcCIC7ggFoXYoGHm7_E; .ASPXAUTH=0C086A935CB61F7BC6ADB201C38207941A3A5E6CE38C0CB2C53EA82142F2C321F1EE02989B3EB8C8E30864068E955B0C34362F13B2B76DAE46213804CE41BBB1DDECF1FA509A09779F1E954D0D410AE3DB0CD5C988F3F3E983E1DCD1708AD9645DE630C03515C7D2E5D5429E4AC6B5F0B91E8FC21299E9269F0AE7C9C26C622A7B0D6AFCE05499D60FBDCF7E4832B5336A50198A722B3303A1B99772B957D12AAB39AF32B8275EBC19D57A403EE8E841'
+    # 'Cookie': 'Cookies_PTZX_OpenID=<open_id>; .ASPXAUTH=<auth_token>', # Remove or secure sensitive cookie information
 }
 class_url = "http://zhwx.jhjw.cn/CourseInformation.aspx?id="
 class_headers = {
     'Host': 'zhwx.jhjw.cn',
     'Upgrade-Insecure-Requests': '1',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.8(0x13080812) XWEB/1216 Flue',
+    'User-Agent': 'Mozilla/5.0 (compatible; ExampleBot/0.1; +http://example.com/bot)',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'Referer': 'http://zhwx.jhjw.cn/PossessCourse.aspx',
     'Accept-Language': 'en-US,en;q=0.9',
-    'Cookie': 'Cookies_PTZX_OpenID=oeW3J5w13PcCIC7ggFoXYoGHm7_E; .ASPXAUTH=0C086A935CB61F7BC6ADB201C38207941A3A5E6CE38C0CB2C53EA82142F2C321F1EE02989B3EB8C8E30864068E955B0C34362F13B2B76DAE46213804CE41BBB1DDECF1FA509A09779F1E954D0D410AE3DB0CD5C988F3F3E983E1DCD1708AD9645DE630C03515C7D2E5D5429E4AC6B5F0B91E8FC21299E9269F0AE7C9C26C622A7B0D6AFCE05499D60FBDCF7E4832B5336A50198A722B3303A1B99772B957D12AAB39AF32B8275EBC19D57A403EE8E841; Cookies_PTZX_OpenID=oeW3J5w13PcCIC7ggFoXYoGHm7_E; Cookies_PTZX_OpenID=oeW3J5w13PcCIC7ggFoXYoGHm7_E'
+    # 'Cookie': 'Cookies_PTZX_OpenID=<open_id>; .ASPXAUTH=<auth_token>', # Remove or secure sensitive cookie information
 }
 # Get the newest course list (Product list)
 courselist = requests.request("POST", courselist_url, headers=courselist_headers, data=courselist_payload).json()
