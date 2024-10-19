@@ -53,7 +53,7 @@ We welcome contributions! Please fork the repository and submit your pull reques
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC0 1.0 Universal License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
